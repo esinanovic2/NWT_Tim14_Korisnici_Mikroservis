@@ -15,13 +15,13 @@ public class Korisnik {
     private String lastName;
     private String username;
     private String password;
-    private int userTypeId;
-    private int userGroupId;
-    private int deviceId;
+    private Long userTypeId;
+    private Long userGroupId;
+    private Long deviceId;
 
     protected Korisnik(){}
 
-    public Korisnik(String firstName, String lastName, String username, String password, int userTypeId, int userGroupId, int deviceId) {
+    Korisnik(String firstName, String lastName, String username, String password, Long userTypeId, Long userGroupId, Long deviceId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -34,8 +34,8 @@ public class Korisnik {
     @Override
     public String toString() {
         return String.format(
-                "Korisnik[id=%d, firstName='%s', lastName='%s']",
-                id,firstName,lastName
+                "Korisnik[id=%d, firstName='%s', lastName='%s', userType=%d, userGroupId=%d, deviceId=%d]",
+                id,firstName,lastName,userTypeId,userGroupId,deviceId
                 );
     }
 
@@ -81,27 +81,27 @@ public class Korisnik {
         this.password = password;
     }
 
-    public int getUserTypeId() {
+    public Long getUserTypeId() {
         return userTypeId;
     }
 
-    public void setUserTypeId(int userTypeId) {
+    public void setUserTypeId(Long userTypeId) {
         this.userTypeId = userTypeId;
     }
 
-    public int getUserGroupId() {
+    public Long getUserGroupId() {
         return userGroupId;
     }
 
-    public void setUserGroupId(int userGroupId) {
+    public void setUserGroupId(Long userGroupId) {
         this.userGroupId = userGroupId;
     }
 
-    public int getDeviceId() {
+    public Long getDeviceId() {
         return deviceId;
     }
 
-    public void setDeviceId(int deviceId) {
+    public void setDeviceId(Long deviceId) {
         this.deviceId = deviceId;
     }
 }
